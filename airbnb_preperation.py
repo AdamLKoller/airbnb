@@ -70,7 +70,7 @@ def airbnb_preperation(data_directory, keep_outliers=False):
     Xtest = pd.get_dummies(Xtest, columns = ['room_type','city','listing_days'])
 
 
-    # Converting boolean values to 1 or 0  # TODO, do not scale these.
+    # Converting boolean values to 1 or 0 
     boolean_features = Xtrain.select_dtypes(include=[np.bool_]).columns
     for feature in boolean_features:
         Xtrain[feature] = Xtrain[feature]*1
